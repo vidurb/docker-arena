@@ -2,7 +2,7 @@ const Arena = require('bull-arena');
 
 let config;
 try {
-  config = require('./index.json');
+  config = JSON.parse(process.env.ARENA_CONFIG);
 } catch (err) {
   if (err.code !== 'MODULE_NOT_FOUND') {
     throw err;
